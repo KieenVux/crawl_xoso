@@ -18,7 +18,7 @@ db.connect((err) => {
 });
 
 // Endpoint để lấy kết quả xổ số theo ngày
-app.get('/lottery/:date', (req, res) => {
+app.get('/ketque_xoso/:date', (req, res) => {
   const date = req.params.date;
 
   const query = 'SELECT results FROM ketqua_xoso WHERE date = ?';
@@ -29,7 +29,7 @@ app.get('/lottery/:date', (req, res) => {
     if (results.length === 0) {
       return res.status(404).json({ message: 'No results found for this date' });
     }
-    res.json({ date: date, results: results[0].results });
+    res.send(results[0].results);
   });
 });
 
