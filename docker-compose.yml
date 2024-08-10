@@ -1,6 +1,21 @@
 version: '3.8'
 
 services:
+  app:
+    restart: always
+    build:
+        context: .
+        dockerfile: ./be/Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=mysql
+      - DB_USER=root
+      - DB_PASSWORD=root
+      - DB_NAME=ketqua_xoso
+ 
   db:
     image: mysql:8.0
     container_name: mysql

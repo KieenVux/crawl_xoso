@@ -6,7 +6,7 @@ const port = 3000;
 
 // Kết nối MySQL
 const db = mysql.createConnection({
-  host: '127.0.0.1',
+  host: 'mysql',
   user: 'root',
   password: 'root',
   database: 'ketqua_xoso'

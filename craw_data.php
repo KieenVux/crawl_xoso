@@ -29,7 +29,6 @@ function extract_results($html, $date) {
 
     foreach ($prizes as $prize => $selector) {
         $elements = $html->find($selector);
-        print_r($elements);
         if ($elements === false) {
             echo "Selector '$selector' not found.";
             continue;
