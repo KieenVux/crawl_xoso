@@ -18,7 +18,7 @@ db.connect((err) => {
 });
 
 // Endpoint để lấy kết quả xổ số theo ngày
-app.get('/ketque_xoso/:date', (req, res) => {
+app.get('/ketqua_xoso/:date', (req, res) => {
   const date = req.params.date;
 
   const query = 'SELECT results FROM ketqua_xoso WHERE date = ?';
